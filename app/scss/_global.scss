@@ -53,7 +53,10 @@ input[type="search"]::-webkit-search-results-decoration {
 .d-none{
   display: none;
 }
-.modal-overlay {
+.ov-hidden{
+  overflow: hidden;
+}
+.popup-overlay {
   position: fixed;
   left: 0;
   top: 0;
@@ -67,7 +70,7 @@ input[type="search"]::-webkit-search-results-decoration {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
-  z-index: 10;
+  z-index: 99;
   overflow: hidden;
   &::-webkit-scrollbar {
     display: none;
@@ -76,18 +79,27 @@ input[type="search"]::-webkit-search-results-decoration {
     display: none;
   }
 }
-.modal {
+.popup {
   display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  height: 100dvh;
+  background: #f9f6f0;
+  max-width: 513px;
+  width: 100%;
+  z-index: 999;
+  padding: 15px;
 }
 
-.modal-overlay--visible {
+.popup-overlay--visible {
   opacity: 1;
   visibility: visible;
   transition: all 0.3s ease-in-out;
   background: rgba(0, 0, 0, 0.3);
-  z-index: 999;
 }
 
-.modal--visible {
+.popup--visible {
   display: block;
+  opacity: 1;
 }

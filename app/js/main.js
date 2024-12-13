@@ -107,3 +107,41 @@
 //     clickable: true,
 //   },
 // });
+
+const popupBtn = document.querySelectorAll('.popup-btn');
+const popupOverlay = document.querySelector('.popup-overlay');
+const popups = document.querySelectorAll('.popup');
+const popupCloseBtns = document.querySelectorAll('.popup-close-btn');
+
+document.body.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('popup-btn')) {
+    return;
+  }
+
+  popups.forEach((elem) => {
+    elem.classList.remove('popup--visible');
+  })
+
+  popupOverlay.classList.add("popup-overlay--visible");
+  document.querySelector(`[data-target="${e.target.getAttribute('data-path')}"]`).classList.add("popup--visible");
+})
+
+function popupRemove(overlay, popupElements) {
+  overlay.classList.remove('popup-overlay--visible');
+  popupElements.forEach((elem) => {
+    elem.classList.remove('popup--visible');
+  })
+}
+
+popupOverlay.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('popup-overlay')) {
+    return;
+  }
+  popupRemove(popupOverlay, popups);
+});
+
+popupCloseBtns.forEach((elem) => {
+  elem.addEventListener('click', () => {
+    popupRemove(popupOverlay, popups);
+  })
+})

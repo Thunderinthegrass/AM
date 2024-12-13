@@ -1,0 +1,67 @@
+.popup-contact {
+  right: 0;
+  padding: 40px 25px 25px 40px;
+  &__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 120%;
+    color: #32302d;
+  }
+  &__text {
+    padding-top: 26px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: rgba(50, 48, 45, 0.8);
+  }
+  .contact-form {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &__input {
+      border: 1px solid rgba(50, 48, 45, 0.3);
+      border-radius: 30px;
+      width: 100%;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      padding: 11px 15px;
+    }
+    .agreement {
+      &__text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: rgba(50, 48, 45, 0.8);
+      }
+      &__link {
+        text-decoration: underline;
+        color: rgba(50, 48, 45, 0.8);
+      }
+      &__checkbox{
+        display: none;
+      }
+    }
+    &__agreement-checkbox{
+      position: relative;
+    }
+    &__btn {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-align: center;
+      color: #f9f6f0;
+      padding: 11px 0 12px;
+      background: #32302d;
+      border-radius: 30px;
+      max-width: 270px;
+      width: 100%;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background: #464441;
+      }
+    }
+  }
+}

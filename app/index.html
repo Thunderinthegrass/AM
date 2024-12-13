@@ -14,54 +14,96 @@
   </head>
     
   <body>
-    <header class="header">
-      <div class="navbar">
+    <div class="popup-overlay">
+      <div class="navbar popup" data-target="navbar">
         <div class="navbar__top">
           <div class="navbar__logo">
-
+            <svg class="navbar__logo-icon">
+              <use xlink:href="img/sprite/sprite.svg#logo"></use>
+            </svg>
           </div>
-          <button type="button" class="navbar__close-btn" aria-label="кнопка закрытия меню.">
-
+          <button type="button" class="navbar__close-btn popup-close-btn" aria-label="кнопка закрытия меню.">
+            <svg class="close-icon">
+              <use xlink:href="img/sprite/sprite.svg#close-icon"></use>
+            </svg>
           </button>
         </div>
         <div class="navbar__middle">
-          <nav class="navbar__nav nav">
-            <ul class="nav__list">
-              <li class="nav__item"><a href="#" class="nav__link">Каталог</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">О компании</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Услуги</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Блог</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Оплата и доставка</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Ваши вопросы</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
-            </ul>
-          </nav>
-          <a href="#" class="navbar__card">
-
-          </a>
+          <div class="navbar__middle-top">
+            <nav class="navbar__nav nav">
+              <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link">Каталог</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">О компании</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Услуги</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Блог</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Оплата и доставка</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Ваши вопросы</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+              </ul>
+            </nav>
+            <a href="#" class="navbar__card">
+              <img src="img/nav-card/1.jpg" class="navbar__card-img" alt="изображение автомобиля.">
+              <div class="navbar__card-info">
+                <span class="navbar__card-title">Lamborghini Revuelto</span>
+                <span class="navbar__card-price">95 000 000 ₽</span>
+              </div>
+            </a>
+          </div>
           <div class="navbar__links-wrapper">
-            <a href="#" class="navbar__link">Автомобили из США</a>
-            <a href="#" class="navbar__link">Автомобили из ОАЭ</a>
-            <a href="#" class="navbar__link">Автомобили из Китая</a>
-            <a href="#" class="navbar__link">Автомобили из Европы</a>
+            <div class="navbar__links-row">
+              <a href="#" class="navbar__link">Автомобили из США</a>
+              <a href="#" class="navbar__link">Автомобили из ОАЭ</a>
+            </div>
+            <div class="navbar__links-row">
+              <a href="#" class="navbar__link">Автомобили из Китая</a>
+              <a href="#" class="navbar__link">Автомобили из Европы</a>
+            </div>
           </div>
         </div>
         <div class="navbar__bottom">
-          <div class="bavbar__contacts">
+          <div class="navbar__contacts">
             <a href="#" class="navbar__address">Москва, пр. Вернадского, 12Д</a>
             <div class="navbar__contacts-right">
               <a href="tel:88002228405" class="navbar__phone">8 (800) 222-84-05</a>
               <a href="mailto:almi-motors@yandex.ru" class="navbar__email">almi-motors@yandex.ru</a>
             </div>
           </div>
-          <button type="button" class="navbar__contact-btn">
+          <button type="button" class="navbar__contact-btn popup-btn" data-path="popup-contact">
             Связаться
           </button>
         </div>
       </div>
+      <div class="popup-contact popup" data-target="popup-contact">
+        <h2 class="popup-contact__title">
+          Связаться с нами
+        </h2>
+        <p class="popup-contact__text">
+          Оставьте контактный номер, и мы свяжемся с вами, чтобы ответить на все вопросы и помочь с расчетом стоимости желаемого автомобиля.
+        </p>
+        <form class="popup-contact__form contact-form">
+          <label for="contact-form-name-input" class="contact-form__label">
+            <input type="text" id="contact-form-name-input" class="contact-form__input" placeholder="Как вас зовут?">
+          </label>
+          <label for="" class="contact-form__label">
+            <input type="tel" id="contact-form-tel-input" class="contact-form__input" placeholder="+7 (999) 999-99-99">
+          </label>
+          <div class="contact-form__agreement agreement">
+            <label for="contact-form__agreement-checkbox">
+              <input type="checkbox" class="agreement__checkbox">
+            </label>
+            <span class="agreement__text">
+              Я соглашаюсь 
+              <a href="#" class="agreement__link">с политикой конфиденциальности</a>
+            </span>
+          </div>
+          <button type="submit" class="contact-form__btn">Связаться</button>
+        </form>
+      </div>
+    </div>
+    <header class="header">
       <div class="header__top">
         <div class="container">
-          <button type="button" class="main-nav-btn" aria-label="Кнопка главного меню">
+          <button type="button" class="main-nav-btn popup-btn" data-path="navbar" aria-label="Кнопка главного меню">
             <span class="line"></span>
           </button>
           <div class="header__search-wrapper">
@@ -83,7 +125,7 @@
               <a class="header__phone-link" href="tel:88002228405">8(800) 222-84-05</a>
               <span class="header__phone-subtext">Автосалон в москве</span>
             </div>
-            <button type="button" class="header__contact-btn">
+            <button type="button" class="header__contact-btn popup-btn" data-path="popup-contact">
               Связаться
             </button>
           </div>
