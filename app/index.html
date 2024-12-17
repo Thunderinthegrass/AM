@@ -81,20 +81,46 @@
           Оставьте контактный номер, и мы свяжемся с вами, чтобы ответить на все вопросы и помочь с расчетом стоимости желаемого автомобиля.
         </p>
         <form class="popup-contact__form contact-form">
-          <label for="contact-form-name-input" class="contact-form__label">
-            <input type="text" id="contact-form-name-input" class="contact-form__input" placeholder="Как вас зовут?">
-          </label>
-          <label for="" class="contact-form__label">
-            <input type="tel" id="contact-form-tel-input" class="contact-form__input" placeholder="+7 (999) 999-99-99">
-          </label>
-          <div class="contact-form__agreement agreement">
-            <label for="contact-form__agreement-checkbox">
-              <input type="checkbox" class="agreement__checkbox">
+          <div class="contact-form__input-wrapper">
+            <label for="contact-form-name-input" class="contact-form__label">
+              Введите ваше имя
             </label>
-            <span class="agreement__text">
-              Я соглашаюсь 
-              <a href="#" class="agreement__link">с политикой конфиденциальности</a>
-            </span>
+            <input type="text" id="contact-form-name-input" class="contact-form__input" placeholder="Как вас зовут?">
+          </div>
+          <div class="contact-form__input-wrapper">
+            <ul class="country-menu">
+              <li class="country-menu__item">
+                <button type="button" class="country-menu__btn">
+                  <svg class="flag">
+                    <use xlink:href="img/sprite/sprite.svg#ru-flag-icon"></use>
+                  </svg>
+                </button>
+                <div class="country-menu__dropdown">
+                  <ul class="country-menu__list">
+                    <li class="country-menu__list-item">
+                      <input type="radio" name="country-menu__input">
+                    </li>
+                    <li class="country-menu__list-item">
+                      <input type="radio" name="country-menu__input">
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <label for="contact-form-tel-input" class="contact-form__label">Введите ваш номер телефона</label>
+            <input type="tel" id="contact-form-tel-input" class="contact-form__input" placeholder="+7 (999) 999-99-99">
+          </div>
+          <div class="contact-form__agreement agreement">
+            <label for="contact-form__agreement-checkbox" class="agreement__checkbox-label">
+              <input type="checkbox" id="contact-form__agreement-checkbox" class="agreement__checkbox">
+              <svg class="agree-icon">
+                <use xlink:href="img/sprite/sprite.svg#agree-icon"></use>
+              </svg>
+              <span class="agreement__text">
+                Я соглашаюсь 
+                <a href="#" class="agreement__link">с политикой конфиденциальности</a>
+              </span>
+            </label>
           </div>
           <button type="submit" class="contact-form__btn">Связаться</button>
         </form>
